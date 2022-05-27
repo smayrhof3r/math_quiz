@@ -1,0 +1,27 @@
+<section class = "select-rows-form">
+  <h2 class = "select-rows-title"> Select rows to test! </h2>
+  <br>
+  <form method = 'POST' action="/setup">
+    <section class = "select-rows-checkboxes">
+      <% [0,5].each do |add| %>
+        <section class = "select-rows-checkbox-row">
+        <% (1..5).to_a.each do |i| %>
+          <% i += add %>
+          <section class = "select-row">
+            <input class = "select-rows-checkbox" type="checkbox" id= <%= i.to_s %> value = <%= i %> name=<%= i.to_s %> checked >
+            <label for="<%= i.to_s %>"> <%= " #{i}" %></label>
+          </section>
+        <% end %>
+        </section>
+      <% end %>
+      </section>
+    <section class = "question-count">How many questions can you handle??</section>
+    <section class = "select-rows-checkbox-row">
+      <input class = "select-rows-checkbox" type="radio" id= "20" value = "20" name="count" checked >
+      <label for="20">just 20</label>
+      <input class = "select-rows-checkbox" type="radio" id= "20" value = "all" name="count" checked >
+      <label for="all!">All!</label>
+    </section>
+    <input class = "select-rows-button" type="submit" value="Let's Go!">
+  </form>
+</section>
