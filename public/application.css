@@ -3,6 +3,7 @@
 @import url("components/navbar.css");
 @import url("components/banner.css");
 @import url("components/form.css");
+@import url("components/quiz.css");
 
 /* --- Fonts --- */
 body {

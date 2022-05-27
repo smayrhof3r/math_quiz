@@ -4,7 +4,6 @@ class Table
   def initialize(attributes = {})
     @range = attributes[:range]
     @count = attributes[:count]
-    binding.pry
     create_table
   end
 

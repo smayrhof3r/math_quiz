@@ -1,15 +1,17 @@
 <% numbers = %w(0️⃣ 1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣ 🔟) %>
-<section class = "score"><%= @@score %></section>
-<section class = "one">
-  <%= numbers[@@question.one] %>
-</section>
-<section class = "times">
-  ❌
-</section>
-<section class = "two">
-  <%= numbers[@@question.two] %>
+<section class = "score">Score: <%= @@score %></section>
+<section class = "question">
+  <section class = "one">
+    <%= numbers[@@question.one] %>
+  </section>
+  <section class = "times">
+    ❌
+  </section>
+  <section class = "two">
+    <%= numbers[@@question.two] %>
+  </section>
 </section>
 <form class = "answer-form" method = 'POST' action="/play">
     <input class = "answer-field" type="text" id="answer" name="answer" value="">
-    <input class = "answer-button" type="submit" value=<%= @button_words %>>
+    <input class = "answer-button" type="submit" value="<%= @button_words %>">
 </form>

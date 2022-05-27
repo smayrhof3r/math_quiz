@@ -1,0 +1,30 @@
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10vw;
+}
+
+.answer-button {
+  background-color: greenyellow;
+  margin: 8px 0px;
+  box-shadow: 2px 2px 5px grey;
+  border-radius: 16px;
+  border: none;
+  width: 50vw;
+}
+
+.answer-field {
+  width: 50vw;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .question {
+    font-size: 20vw;
+  }
+  .answer-button, .answer-field {
+    width: 100vw;
+  }
+
+}

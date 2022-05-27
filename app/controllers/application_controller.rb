@@ -21,7 +21,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/setup' do
-    binding.pry
     @@table = Table.new({ range: params.values[0..-2].map(&:to_i), count: params[:count]})
     redirect '/play'
   end
