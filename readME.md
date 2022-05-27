@@ -1,4 +1,4 @@
-# sinatra-cookbook
+# math quiz
 
 ## A first attempt at MVC model web app
 As part of the le Wagon bootcamp, we are currently learning MVC model in the console. I got a taste of Sinatra with the 'cookbook' challenge, so am making my second app - a math quiz for the kids :)
