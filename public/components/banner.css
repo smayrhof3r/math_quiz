@@ -10,15 +10,16 @@
 	background-size: cover;
 	/*justify-content: space-around;
 	align-items: center; */
-	height: 15vh;
-  min-height: 15vh;
+	height: 13vh;
 	position: relative
 }
 
 .banner h1 {
-	font-size: 8vw;
-	color: rgb(240,240,240);
-	letter-spacing: 5px;
+    font-size: 4vw;
+    color: rgb(240,240,240);
+    letter-spacing: 5px;
+    text-align: left;
+    width: 90vw;
 }
 
 .banner p {

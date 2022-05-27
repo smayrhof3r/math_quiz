@@ -1,10 +1,11 @@
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .question-count {
-  width: 50vw;
+  width: 80vw;
   text-align: center;
   font-size: 4vw;
   background-color: mediumpurple;
@@ -30,6 +31,11 @@ label {
   height: 4vw;
   width: 4vw;
 }
+.select-rows-checkboxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .select-rows-checkbox-row {
   display: flex;
@@ -38,6 +44,7 @@ label {
   font-size: 4vw;
   align-items: center;
 }
+
 
 .select-row {
   margin: 1vw;
@@ -49,6 +56,7 @@ label {
 .select-rows-button {
   background-color: yellow;
   border: 5px solid mediumpurple;
+  width: 50vw;
 }
 
 @media only screen and (max-width: 600px) {
