@@ -8,7 +8,7 @@
           <% i += add %>
           <section class = "select-row">
             <input class = "select-rows-checkbox" type="checkbox" id= <%= i.to_s %> value = <%= i %> name=<%= i.to_s %> checked >
-            <label for="<%= i.to_s %>"> <%= " #{i}" %></label>
+            <label class = "select-rows-label" for="<%= i.to_s %>"> <%=  "#{i}" %></label>
           </section>
         <% end %>
         </section>

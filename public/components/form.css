@@ -10,7 +10,7 @@ form {
   font-size: 4vw;
   background-color: mediumpurple;
   color: white;
-  margin: 10px 0px;
+  margin: 30px 0px 10px 0;
 }
 
 label {
@@ -31,6 +31,14 @@ label {
   height: 4vw;
   width: 4vw;
 }
+
+.select-rows-label {
+  width: 10vw;
+  text-align: left;
+  margin: 0;
+  padding: 0px 1.5vw;
+}
+
 .select-rows-checkboxes {
   display: flex;
   flex-direction: column;
@@ -47,9 +55,7 @@ label {
 
 
 .select-row {
-  margin: 1vw;
   display: flex;
-  padding: 0px 1vw;
   align-items: center;
 }
 
@@ -57,6 +63,7 @@ label {
   background-color: yellow;
   border: 5px solid mediumpurple;
   width: 50vw;
+  margin: 10px 0 0 0;
 }
 
 @media only screen and (max-width: 600px) {
