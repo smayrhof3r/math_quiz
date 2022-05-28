@@ -32,7 +32,7 @@ class Score
     @message = ['Go go go!', 'You got this!', 'Keep it up!'].sample
     @score += 10
     if @question_count < 50
-      @status[@question_index] = '🤓' unless @status[@question_index] == '😥'
+      @status[@question_index] = ['🤓', '😀','😍', '😎', '😁', '🤗', '🥳', '🤩'].sample  unless @status[@question_index] == '😥'
     else
       @status = "#{@question_index+1} / #{@question_count}"
     end
@@ -46,7 +46,7 @@ class Score
     @score -= 2
     @message = ['Try again!', 'Not quite!', 'Oops...!'].sample
     if @question_count < 50
-      @status[@question_index] = '😥'
+      @status[@question_index] = ['😥', '🥺', '😵', '🥴', '☹️', '😕', '😦'].sample
       @status += '😐'
     else
       @status = "#{@question_index} / #{@question_count}"
