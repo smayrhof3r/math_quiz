@@ -13,10 +13,15 @@ class Table
 
   def return(question)
     @table << question
+    @table.shuffle!
   end
 
   def empty?
     @table.empty?
+  end
+
+  def size
+    @table.size
   end
 
   private
@@ -28,6 +33,6 @@ class Table
     end
     @table.flatten!
     @table.shuffle!
-    @count == "20" ? @table.sample(20) : @table
+    @table = @table.first(20) unless @count == "all"
   end
 end

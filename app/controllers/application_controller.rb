@@ -9,6 +9,9 @@ class ApplicationController < Sinatra::Base
   def initialize
     super
     @@score = 0
+    @@questions_completed = 0
+    @@total_questions = 0
+    @@mistakes = 0
   end
 
   configure do
@@ -17,11 +20,15 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    @@questions_completed = 0
     erb :index
   end
 
   post '/setup' do
+    # unanswered:😐 right:🤓 wrong: 😥
     @@table = Table.new({ range: params.values[0..-2].map(&:to_i), count: params[:count]})
+    @@total_questions = @@table.size
+    @@status = '😐' * @@total_questions
     redirect '/play'
   end
 
@@ -33,10 +40,16 @@ class ApplicationController < Sinatra::Base
 
   post '/play' do
     @correct = evaluate_score
+    @@questions_completed += 1 if @correct
+    update_status(@correct)
     @button_words = button_word_choice(@correct)
     if @correct
       redirect @@table.empty? ? '/end' : '/play'
     else
+      @@total_questions += 1
+      @@status += '😐'
+      @@mistakes += 1
+      @@table.return(@@question)
       erb :quiz
     end
   end
@@ -50,7 +63,6 @@ class ApplicationController < Sinatra::Base
     else
       correct = false
       @@score -= 1
-      @@table.return(@@question)
     end
     correct
   end
@@ -60,6 +72,14 @@ class ApplicationController < Sinatra::Base
       ['Go go go!', 'You got this!', 'Keep it up!'].sample
     else
       ['Try again!', 'Not quite!', 'Oops...!'].sample
+    end
+  end
+
+  def update_status(correct)
+    if correct
+      @@status[@@questions_completed-1] = '🤓' unless @@status[@@questions_completed-1] == '😥'
+    else
+      @@status[@@questions_completed] = '😥'
     end
   end
 end
