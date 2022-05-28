@@ -1,26 +1,26 @@
 <% numbers = %w(0️⃣ 1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣ 🔟) %>
 
 <section class = "progress-emoji">
-  <%= @@status %>
+  <%= @@score.status %>
 </section>
-<% if @@mistakes > 0 %>
+<% if @@score.mistakes > 0 %>
   <section class = "mistakes">
-    (<%= "+ #{@@mistakes} mistakes" %>)
+    (<%= "+ #{@@score.mistakes} mistake#{@@score.mistakes == 1 ? "" : "s"}" %>)
   </section>
 <% end %>
-<section class = "score">Score: <%= @@score %></section>
+<section class = "score">Score: <%= @@score.score %></section>
 <section class = "question">
   <section class = "one">
-    <%= numbers[@@question.one] %>
+    <%= numbers[@@score.question.one] %>
   </section>
   <section class = "times">
     ❌
   </section>
   <section class = "two">
-    <%= numbers[@@question.two] %>
+    <%= numbers[@@score.question.two] %>
   </section>
 </section>
 <form class = "answer-form" method = 'POST' action="/play">
     <input class = "answer-field" type="text" id="answer" name="answer" value="" autofocus="autofocus">
-    <input class = "answer-button" type="submit" value="<%= @button_words %>">
+    <input class = "answer-button" type="submit" value="<%= @@score.message %>">
 </form>
