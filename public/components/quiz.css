@@ -34,11 +34,35 @@
     padding-right: 1vw;
   }
 
+  .end-message {
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 50px;
+    line-height: 50px;
+    margin: 20px 0;
+    letter-spacing: 3px
+  }
+
+  .end-message-details {
+    text-align: center;
+    font-size: 4vw;
+    margin: 0;
+    padding: 0;
+  }
+
+  .end-score {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    width: 80vw;
+    margin: 0 0 20px 0;
+  }
+
 @media only screen and (max-width: 600px) {
   .question {
     font-size: 20vw;
   }
-  .answer-button, .answer-field, .progress-emoji, .mistakes {
+  .answer-button, .answer-field, .progress-emoji, .mistakes, .end-score {
     width: 100vw;
   }
   .progress-emoji {

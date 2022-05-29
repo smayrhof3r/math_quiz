@@ -1,6 +1,7 @@
+# keeps track of the game state
 class Score
   attr_accessor :question
-  attr_reader :mistakes, :status, :message, :score
+  attr_reader :mistakes, :status, :message, :score, :question_count
 
   def initialize(table)
     @table = table
@@ -32,9 +33,9 @@ class Score
     @message = ['Go go go!', 'You got this!', 'Keep it up!'].sample
     @score += 10
     if @question_count < 50
-      @status[@question_index] = ['🤓', '😀','😍', '😎', '😁', '🤗', '🥳', '🤩'].sample  unless @status[@question_index] == '😥'
+      @status[@question_index] = ['🤓', '😀', '😍', '😎', '😁', '🤗', '🥳', '🤩'].sample unless @status[@question_index] == '😥'
     else
-      @status = "#{@question_index+1} / #{@question_count}"
+      @status = "#{@question_index + 1} / #{@question_count}"
     end
     @question_index += 1
   end
@@ -45,6 +46,10 @@ class Score
     @table.return(@question)
     @score -= 2
     @message = ['Try again!', 'Not quite!', 'Oops...!'].sample
+    update_status
+  end
+
+  def update_status
     if @question_count < 50
       @status[@question_index] = ['😥', '🥺', '😵', '🥴', '☹️', '😕', '😦'].sample
       @status += '😐'

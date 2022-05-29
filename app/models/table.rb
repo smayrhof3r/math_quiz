@@ -33,6 +33,6 @@ class Table
     end
     @table.flatten!
     @table.shuffle!
-    @table = @table.first(20) unless @count == "all"
+    @table = @table.first(5) unless @count == "all"
   end
 end

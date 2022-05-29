@@ -3,14 +3,15 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(180deg,
+	/*background: linear-gradient(180deg,
 								 rgba(0,0,0, 1) 0%,
 								 rgba(32, 22, 22, 0) 100%),
 								url("../images/banner.jpg");
 	background-size: cover;
-	/*justify-content: space-around;
+	justify-content: space-around;
 	align-items: center; */
-	height: 13vh;
+	background-color: purple;
+  height: 13vh;
 	position: relative
 }
 

@@ -34,4 +34,7 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get '/end' do
+    erb :end
+  end
 end
